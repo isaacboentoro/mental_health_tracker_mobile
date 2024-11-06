@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mental_health_tracker/menu.dart';
+import 'package:mental_health_tracker/screens/menu.dart';
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
 
@@ -26,8 +26,13 @@ class LeftDrawer extends StatelessWidget {
         Padding(padding: EdgeInsets.all(8)),
         Text(
           "Track your mental health every day here!",
-          // TODO: Add text style with center alignment, font size 15, white color, and normal weight
-        ),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 15,
+            color: Colors.white,
+            fontWeight: FontWeight.normal,
+              ),
+            ),
       ],
     ),
           ),
