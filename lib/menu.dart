@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_tracker/widgets/left_drawer.dart';
+import 'package:mental_health_tracker/widgets/moodentry_form.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -11,6 +13,7 @@ class MyHomePage extends StatelessWidget {
     ItemHomepage("Add Mood", Icons.add),
     ItemHomepage("Logout", Icons.logout),
   ];
+
 
  @override
   Widget build(BuildContext context) {
@@ -29,6 +32,7 @@ class MyHomePage extends StatelessWidget {
         // The background color of the AppBar is obtained from the application theme color scheme.
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: const LeftDrawer(),
       // Body of the page with paddings around it.
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -157,6 +161,12 @@ class ItemCard extends StatelessWidget {
             ..showSnackBar(
               SnackBar(content: Text("You have pressed the ${item.name} button!"))
             );
+          if (item.name == "Add Mood") {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const MoodEntryFormPage()),
+              );
+            }
         },
         // Container to store the Icon and Text
         child: Container(
