@@ -123,14 +123,12 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
                     onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                             // Send request to Django and wait for the response
-                            // TODO: Change the URL to your Django app's URL. Don't forget to add the trailing slash (/) if needed.
                             final response = await request.postJson(
                                 "http://localhost:8000/create-flutter/",
                                 jsonEncode(<String, String>{
                                     'mood': _mood,
                                     'mood_intensity': _moodIntensity.toString(),
                                     'feelings': _feelings,
-                                // TODO: Adjust the fields with your project
                                 }),
                             );
                             if (context.mounted) {
